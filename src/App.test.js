@@ -1,9 +1,13 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import ShallowRenderer from 'react-test-renderer/shallow';
 import App from './App';
+import LoginPage from './pages/LoginPage';
 
-test('renders learn react link', () => {
-  const { getByText } = render(<App />);
-  const linkElement = getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+test('renders login page', () => {
+  const renderer = new ShallowRenderer();
+  renderer.render(<App/>)
+  const result = renderer.getRenderOutput()
+
+  expect(result.type).toBe('div');
+  expect(result.props.children).toEqual(<LoginPage/>)
 });

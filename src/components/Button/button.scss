@@ -1,0 +1,18 @@
+.btn {
+  background-color: #007bff;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  &:hover {
+    background-color: #0048ff;
+    border: none;
+    outline: none;
+  }
+  &:focus {
+    box-shadow:none
+  }
+}
